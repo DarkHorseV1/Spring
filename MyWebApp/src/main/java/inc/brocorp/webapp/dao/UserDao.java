@@ -1,10 +1,10 @@
-package inc.brocorp.webapp.service;
+package inc.brocorp.webapp.dao;
 
 import inc.brocorp.webapp.entity.Task;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
 
     List<Task> showAll();
 }

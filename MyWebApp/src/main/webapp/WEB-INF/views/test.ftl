@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>It's work on Web Config!</h1>
-${msg2}
+<h1>It's test page!</h1>
+${msg}
 </body>
 </html>
