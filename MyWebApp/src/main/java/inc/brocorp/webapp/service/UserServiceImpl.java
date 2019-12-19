@@ -17,4 +17,24 @@ public class UserServiceImpl implements UserService {
     public List<Task> showAll() {
         return userDao.showAll();
     }
+
+    @Override
+    public void delete(int id) {
+        userDao.delete(id);
+    }
+
+    @Override
+    public void create(Task task) {
+        userDao.create(task);
+    }
+
+    @Override
+    public void update(Task task) {
+        userDao.update(task);
+    }
+
+    @Override
+    public Task getById(int id) {
+        return userDao.getById(id);
+    }
 }
