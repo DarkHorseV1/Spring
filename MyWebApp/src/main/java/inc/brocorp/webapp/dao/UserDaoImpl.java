@@ -26,9 +26,9 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void create(Task task) {
-        String sql = "INSERT INTO tasklist.tasklist(id, date, task, implementation, deadline) " +
-                "VALUES (?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, task.getId(),
+        String sql = "INSERT INTO tasklist.tasklist(date, task, implementation, deadline) " +
+                "VALUES (?, ?, ?, ?)";
+        jdbcTemplate.update(sql,
                 task.getDate(), task.getTask(),
                 task.getImplementation(), task.getDeadLine());
     }
@@ -36,9 +36,8 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void update(Task task) {
         String sql = "UPDATE tasklist.tasklist SET date=?, task=?, implementation=?, deadline=? WHERE id=?";
-        jdbcTemplate.update(sql, task.getId(),
-                task.getDate(), task.getTask(),
-                task.getImplementation(), task.getDeadLine());
+        jdbcTemplate.update(sql, task.getDate(), task.getTask(),
+                task.getImplementation(), task.getDeadLine(), task.getId());
     }
 
     @Override

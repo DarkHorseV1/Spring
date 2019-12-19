@@ -39,9 +39,26 @@ public class UserController {
         return "addTask";
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteTask(@PathVariable("id") int id){
+        userService.delete(id);
+        return "redirect:/tasks";
+    }
+    @GetMapping("/edit/{id}")
+    public String editTask(@PathVariable("id") int id, Model model){
+        model.addAttribute("task",userService.getById(id));
+        return "editTask";
+    }
+
     @PostMapping("/addTask")
     public String addTask(@ModelAttribute("task") Task task) {
         userService.create(task);
         return "redirect:/tasks";
+    }
+
+    @PostMapping("/updateTask")
+    public String editTask(@ModelAttribute("task") Task task) {
+        userService.update(task);
+        return "redirect:/task/"+task.getId();
     }
 }

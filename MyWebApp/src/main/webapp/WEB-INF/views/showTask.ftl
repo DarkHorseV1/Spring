@@ -22,7 +22,7 @@
 
     </tr>
     <tr>
-        <td></td>
+        <td>Deadline</td>
         <td>${task.deadLine}</td>
 
     </tr>
